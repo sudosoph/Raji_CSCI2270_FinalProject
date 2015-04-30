@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2D7F0820-41EB-4381-8436-96C4C1D3305C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Genealogy</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7F8C75C26E44BE6BD7ECE96C1D71232A207F03B7</key>
+		<string>https://github.com/sudosoph/Raji_CSCI2270_FinalProject.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Genealogy/Genealogy.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7F8C75C26E44BE6BD7ECE96C1D71232A207F03B7</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sudosoph/Raji_CSCI2270_FinalProject.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7F8C75C26E44BE6BD7ECE96C1D71232A207F03B7</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7F8C75C26E44BE6BD7ECE96C1D71232A207F03B7</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Raji_CSCI2270_FinalProject</string>
+		</dict>
+	</array>
+</dict>
+</plist>
