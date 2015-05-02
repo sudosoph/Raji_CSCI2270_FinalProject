@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A05123341AF0CFF400A67408 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A05123331AF0CFF400A67408 /* main.cpp */; };
-		A051233C1AF0D00400A67408 /* Genealogy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A051233A1AF0D00400A67408 /* Genealogy.cpp */; };
+		A051233C1AF0D00400A67408 /* BST in Sources */ = {isa = PBXBuildFile; fileRef = A051233A1AF0D00400A67408 /* BST */; };
+		A0F45C941AF5547300CAE3E2 /* BST.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0F45C931AF5547300CAE3E2 /* BST.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,9 +25,9 @@
 
 /* Begin PBXFileReference section */
 		A05123301AF0CFF400A67408 /* Genealogy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Genealogy; sourceTree = BUILT_PRODUCTS_DIR; };
-		A05123331AF0CFF400A67408 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		A051233A1AF0D00400A67408 /* Genealogy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Genealogy.cpp; sourceTree = "<group>"; };
-		A051233B1AF0D00400A67408 /* Genealogy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Genealogy.h; sourceTree = "<group>"; };
+		A051233A1AF0D00400A67408 /* BST */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; path = BST; sourceTree = "<group>"; };
+		A0F45C921AF5546D00CAE3E2 /* BST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BST.h; sourceTree = "<group>"; };
+		A0F45C931AF5547300CAE3E2 /* BST.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BST.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,9 +44,9 @@
 		A05123271AF0CFF400A67408 = {
 			isa = PBXGroup;
 			children = (
-				A051233A1AF0D00400A67408 /* Genealogy.cpp */,
-				A051233B1AF0D00400A67408 /* Genealogy.h */,
-				A05123321AF0CFF400A67408 /* Genealogy */,
+				A051233A1AF0D00400A67408 /* BST */,
+				A0F45C921AF5546D00CAE3E2 /* BST.h */,
+				A0F45C931AF5547300CAE3E2 /* BST.cpp */,
 				A05123311AF0CFF400A67408 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,14 +57,6 @@
 				A05123301AF0CFF400A67408 /* Genealogy */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		A05123321AF0CFF400A67408 /* Genealogy */ = {
-			isa = PBXGroup;
-			children = (
-				A05123331AF0CFF400A67408 /* main.cpp */,
-			);
-			path = Genealogy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -101,7 +93,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A051232B1AF0CFF400A67408 /* Build configuration list for PBXProject "Genealogy" */;
+			buildConfigurationList = A051232B1AF0CFF400A67408 /* Build configuration list for PBXProject "BST" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -123,8 +115,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A05123341AF0CFF400A67408 /* main.cpp in Sources */,
-				A051233C1AF0D00400A67408 /* Genealogy.cpp in Sources */,
+				A0F45C941AF5547300CAE3E2 /* BST.cpp in Sources */,
+				A051233C1AF0D00400A67408 /* BST in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,7 +214,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A051232B1AF0CFF400A67408 /* Build configuration list for PBXProject "Genealogy" */ = {
+		A051232B1AF0CFF400A67408 /* Build configuration list for PBXProject "BST" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A05123351AF0CFF400A67408 /* Debug */,
@@ -238,6 +230,7 @@
 				A05123391AF0CFF400A67408 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

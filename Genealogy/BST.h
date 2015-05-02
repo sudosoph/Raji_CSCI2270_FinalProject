@@ -1,56 +1,63 @@
 //
-//  Final Project: BST Genealogy
+//  Final Project: Extended BST
 //  Professor: Rhonda Hoenigman
 //  Course: CSCI 2270 Spring 2015
 //  Created by Sophia.
-//  Genealogy.h
+//  BST.h
 //
 
 #ifndef __Genealogy__Genealogy__
 #define __Genealogy__Genealogy__
 
-#include <stdio.h>
-#include <string>
+#include <iostream>
+#include <deque>
+#include <climits>
+#include <vector>
 
-struct Person {
-    char name;
-    std::string marital;
-    std::string birth;
-    std::string death;
-    Person *parent;
-    Person *child;
-    
-    Person() {};
-    
-    Person(char n, std::string m, std::string b, std::string d) {
-        name = n;
-        marital = m;
-        birth = b;
-        death = d;
-    }
+struct Tree
+{
+    char data;
+    Tree *left;
+    Tree *right;
+    Tree *parent;
 };
 
-class FamilyTree {
+class BST {
 public:
-    FamilyTree();
-    FamilyTree(char n, std::string m, std::string b, std::string d);
-    virtual ~FamilyTree();
-    void printFamilyTree(Person *p);
-    void addMember(Person *p, char n, std::string m, std::string b, std::string d);
-    Person *getAncestor(); //leading cause of non-namespace STDs in America
-    void replaceHead(Person *p);
-    Person *findPerson(Person *p, char name);
-    void addSpouse(Person p);
-    Person *getSpouse();
-    void addChild(Person *p);
-    bool hasChild();
-    int countFamilyMembers();
-    int countGenerations();
-    int getNumberOfChildren();
-    void displayTree();
-private:
-    void DeleteAll(Person *p);
-    Person *searchFamilyTree(Person *p, char name);
-    Person *ancestor;
+    BST();
+    virtual ~BST();
+    Tree* lookUp(struct Tree *node, char key);
+    Tree* leftMost(struct Tree *node);
+    struct Tree *newTreeNode(int data);
+    struct Tree* insertTreeNode(struct Tree *node, int data);
+    void isBST(struct Tree *node);
+    int treeSize(struct Tree *node);
+    int maxDepth(struct Tree *node);
+    int minDepth(struct Tree *node);
+    Tree* minTree(struct Tree *node);
+    Tree* maxTree(struct Tree *node);
+    Tree *succesorInOrder(struct Tree *node);
+    Tree *predecessorInOrder(struct Tree *node);
+    void reverseOrderPrint(struct Tree *node);
+    Tree *lowestCommonAncestor(Tree *node, Tree *p, Tree *q);
+    void clear(struct Tree *node);
+    void printTreeInOrder(struct Tree *node);
+    void printTreePostOrder(struct Tree *node);
+    void printTreePreOrder(struct Tree *node);
+    void printTreeReverseOrder(struct Tree *node);
+    void pathFinder(struct Tree *node, int path[], int level);
+    bool matchTree(Tree *r1, Tree *r2);
+    bool subTree(Tree *r1, Tree *r2);
+    bool isSubTree(Tree *r1, Tree *r2);
+    void mirror(Tree *r);
+    Tree *addToBST(char arr[], int start, int end);
+    Tree *createMinimalBST(char arr[], int size);
+    void BreadthFirstTraversal(Tree *root);
+    int getLevel(struct Tree *node, int elm, int level);
+    void BreadthFirst_LevelElement_Print(struct Tree *root, std::vector<std::vector<int> > &v);
+    void levelPrint(struct Tree *node, std::vector<std::vector<char> >&elm, int level);
+    void NthMax(struct Tree* t);
+    void TreeToArray(struct Tree *node, int a[]);
+    void level_even_odd(struct Tree *node);
 };
 #endif /* defined(__Genealogy__Genealogy__) */
