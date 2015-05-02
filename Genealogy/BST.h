@@ -13,7 +13,7 @@
 #include <string>
 
 struct Person {
-    std::string name;
+    char name;
     std::string marital;
     std::string birth;
     std::string death;
@@ -22,7 +22,7 @@ struct Person {
     
     Person() {};
     
-    Person(std::string n, std::string m, std::string b, std::string d) {
+    Person(char n, std::string m, std::string b, std::string d) {
         name = n;
         marital = m;
         birth = b;
@@ -33,13 +33,13 @@ struct Person {
 class FamilyTree {
 public:
     FamilyTree();
-    FamilyTree(std::string n, std::string m, std::string b, std::string d);
+    FamilyTree(char n, std::string m, std::string b, std::string d);
     virtual ~FamilyTree();
     void printFamilyTree(Person *p);
-    void addMember(Person *p, std::string n, std::string m, std::string b, std::string d);
+    void addMember(Person *p, char n, std::string m, std::string b, std::string d);
     Person *getAncestor(); //leading cause of non-namespace STDs in America
     void replaceHead(Person *p);
-    Person *findPerson(Person *p, std::string name);
+    Person *findPerson(Person *p, char name);
     void addSpouse(Person p);
     Person *getSpouse();
     void addChild(Person *p);
@@ -50,7 +50,7 @@ public:
     void displayTree();
 private:
     void DeleteAll(Person *p);
-    Person *searchFamilyTree(Person *p, std::string name);
+    Person *searchFamilyTree(Person *p, char name);
     Person *ancestor;
 };
 #endif /* defined(__Genealogy__Genealogy__) */
