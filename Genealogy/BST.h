@@ -4,7 +4,7 @@
 //  Course: CSCI 2270 Spring 2015
 //  Created by Sophia.
 //  BST.h
-//
+//  Adapted from Assignment 5 & Bogo to Bogo C++ Tutorial Binary Tree Example
 
 #ifndef __Genealogy__Genealogy__
 #define __Genealogy__Genealogy__
@@ -45,19 +45,12 @@ public:
     void printTreePostOrder(struct Tree *node);
     void printTreePreOrder(struct Tree *node);
     void printTreeReverseOrder(struct Tree *node);
-    void pathFinder(struct Tree *node, int path[], int level);
     bool matchTree(Tree *r1, Tree *r2);
     bool subTree(Tree *r1, Tree *r2);
     bool isSubTree(Tree *r1, Tree *r2);
     void mirror(Tree *r);
-    Tree *addToBST(char arr[], int start, int end);
-    Tree *createMinimalBST(char arr[], int size);
     void BreadthFirstTraversal(Tree *root);
     int getLevel(struct Tree *node, int elm, int level);
-    void BreadthFirst_LevelElement_Print(struct Tree *root, std::vector<std::vector<int> > &v);
-    void levelPrint(struct Tree *node, std::vector<std::vector<char> >&elm, int level);
-    void NthMax(struct Tree* t);
-    void TreeToArray(struct Tree *node, int a[]);
-    void level_even_odd(struct Tree *node);
+    
 };
 #endif /* defined(__Genealogy__Genealogy__) */

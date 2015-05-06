@@ -4,7 +4,7 @@
 //  Course: CSCI 2270 Spring 2015
 //  Created by Sophia.
 //  BST.cpp
-//
+//  Adapted from Assignment 5 & Bogo to Bogo C++ Tutorial Binary Tree Example
 
 #include "BST.h"
 #include <iostream>
@@ -21,6 +21,21 @@ Tree::~Tree() {
     delete node;
 }
 
+/*
+ Function prototype:
+ Tree* lookUp(struct Tree, char)
+ 
+ Function description:
+ This method searches for a node by eliminating half the nodes from our search on each iteration by choosing to follow the left subtree or the right subtree.
+ 
+ Example:
+ Tree t;
+ lookUp(t, "A")
+ 
+ Precondition: Tree contains nodes to look up recursively, otherwise returns node passed in. The node passed in is the node we want to search for. The input char is node name.
+ Post condition: Node is found and returned by method.
+ */
+
 Tree* lookUp(struct Tree *node, char key)
 {
     if(node == NULL) return node;
@@ -34,6 +49,21 @@ Tree* lookUp(struct Tree *node, char key)
     }
 }
 
+/*
+ Function prototype:
+ Tree* leftMost(struct Tree)
+ 
+ Function description:
+ This method finds the leftmost node in a tree.
+ 
+ Example:
+ Tree t;
+ leftMost(t)
+ 
+ Precondition: Tree node must be passed in. The node is the root of the tree where leftmost node is to be found.
+ Post condition: Returns leftmost node in tree passed in.
+ */
+
 Tree* leftMost(struct Tree *node)
 {
     if(node == NULL) return NULL;
@@ -41,6 +71,21 @@ Tree* leftMost(struct Tree *node)
         node = node->left;
     return node;
 }
+
+/*
+ Function prototype:
+ struct Tree *newTreeNode(int)
+ 
+ Function description:
+ This method creates the root node of a Tree.
+ 
+ Example:
+ Tree t;
+ t.newTreeNode(7)
+ 
+ Precondition: Tree must be empty to create the root node. The input value is an integer.
+ Post condition: Root node with NULL parent, left and right children.
+ */
 
 struct Tree *newTreeNode(int data)
 {
@@ -52,6 +97,21 @@ struct Tree *newTreeNode(int data)
     
     return node;
 }
+
+/*
+ Function prototype:
+ struct Tree* insertTreeNode(struct Tree, int)
+ 
+ Function description:
+ This method inserts a new node into the tree.
+ 
+ Example:
+ Tree t;
+ newTreeNode(t, 7)
+ 
+ Precondition: Examines the root node and recursively inserts the new node to the left subtree if the value is less than the root and right subtree if the value is greater than or equal to the root. The input value is an integer.
+ Post condition: Inserts a node into the tree and preserves BST properties.
+ */
 
 struct Tree* insertTreeNode(struct Tree *node, int data)
 {
@@ -76,6 +136,21 @@ struct Tree* insertTreeNode(struct Tree *node, int data)
     return node;
 }
 
+/*
+ Function prototype:
+ void isBST(struct Tree)
+ 
+ Function description:
+ This method determines if a given tree is a binary search tree.
+ 
+ Example:
+ Tree t;
+ isBST(t)
+ 
+ Precondition: Binary search tree must already exist. The input is existing tree. If it is a BST, inorder traversal outputs elements in increasing order.
+ Post condition: Returns statement about whether tree passed in is a BST or not.
+ */
+
 void isBST(struct Tree *node)
 {
     static int lastData = INT_MIN;
@@ -95,12 +170,42 @@ void isBST(struct Tree *node)
     return;
 }
 
+/*
+ Function prototype:
+ int treeSize(struct Tree)
+ 
+ Function description:
+ This method calculates the total number of nodes in a tree.
+ 
+ Example:
+ Tree t;
+ treeSize(t)
+ 
+ Precondition: Must pass in existing tree. If the tree is empty, it returns 0, otherwise it recursively counts left and right subtree nodes. The input string name is movie title.
+ Post condition: Returns int of total number of nodes in tree.
+ */
+
 int treeSize(struct Tree *node)
 {
     if(node == NULL) return 0;
     else
         return treeSize(node->left) + 1 + treeSize(node->right);
 }
+
+/*
+ Function prototype:
+ int maxDepth(struct Tree)
+ 
+ Function description:
+ This method finds the number of nodes along the longest path from the root node to farthest leaf.
+ 
+ Example:
+ Tree t;
+ maxDepth(t)
+ 
+ Precondition: If tree is empty, max depth will be 0.
+ Post condition: Returns int of max value of longest path in tree.
+ */
 
 int maxDepth(struct Tree *node)
 {
@@ -114,6 +219,21 @@ int maxDepth(struct Tree *node)
 				leftDepth + 1 : rightDepth + 1;
 }
 
+/*
+ Function prototype:
+ int minDepth(struct Tree)
+ 
+ Function description:
+ This method finds the number of nodes along the shortest path from the root node to farthest leaf.
+ 
+ Example:
+ Tree t;
+ minDepth(t)
+ 
+ Precondition: If tree is empty, min depth will be 0.
+ Post condition: Returns int of min value of longest path in tree.
+ */
+
 int minDepth(struct Tree *node)
 {
     if(node == NULL || (node->left == NULL && node->right == NULL))
@@ -126,6 +246,21 @@ int minDepth(struct Tree *node)
 				leftDepth + 1 : rightDepth + 1;
 }
 
+/*
+ Function prototype:
+ bool isBalanced(struct Tree)
+ 
+ Function description:
+ This method determines if the binary tree is balanced (height of the two subtrees of every node never differ by more than 1).
+ 
+ Example:
+ Tree t;
+ isBalanced(t)
+ 
+ Precondition: Binary search tree must exist.
+ Post condition: Returns boolean for whether it is balanced or not.
+ */
+
 bool isBalanced(struct Tree *node)
 {
     if(maxDepth(node)-minDepth(node) <= 1)
@@ -133,6 +268,21 @@ bool isBalanced(struct Tree *node)
     else
         return false;
 }
+
+/*
+ Function prototype:
+ Tree* minTree(struct Tree)
+ 
+ Function description:
+ This method calculates the minimum node in the tree.
+ 
+ Example:
+ Tree t;
+ minTree(t)
+ 
+ Precondition: If tree has no nodes, it is empty and minTree returns NULL. Otherwise you pass in the tree's root.
+ Post condition: Returns minimum node in tree.
+ */
 
 /* Tree Minimum */
 Tree* minTree(struct Tree *node)
@@ -142,6 +292,21 @@ Tree* minTree(struct Tree *node)
         node = node -> left;
     return node;
 }
+
+/*
+ Function prototype:
+ Tree* maxTree(struct Tree)
+ 
+ Function description:
+ This method calculates the minimum node in the tree.
+ 
+ Example:
+ Tree t;
+ maxTree(t)
+ 
+ Precondition: If tree has no nodes, it is empty and maxTree returns NULL. Otherwise you pass in the tree's root.
+ Post condition: Returns maximum node in tree.
+ */
 
 /* Tree Maximum */
 Tree* maxTree(struct Tree *node)
@@ -181,6 +346,7 @@ Tree *predecessorInOrder(struct Tree *node)
     return y;
 }
 
+
 void reverseOrderPrint(struct Tree *node)
 {
     if(node == NULL) return;
@@ -193,6 +359,7 @@ void reverseOrderPrint(struct Tree *node)
     cout << node->data << " ";
     reverseOrderPrint(node->left);
 }
+
 
 Tree *lowestCommonAncestor(Tree *node, Tree *p, Tree *q)
 {
@@ -246,11 +413,6 @@ void printTreePostOrder(struct Tree *node)
     cout << node->data << " ";
 }
 
-/* print in preorder */
-/* 1. Visit the root.
- 2. Traverse the left subtree.
- 3. Traverse the right subtree.
- */
 void printTreePreOrder(struct Tree *node)
 {
     if(node == NULL) return;
@@ -259,6 +421,7 @@ void printTreePreOrder(struct Tree *node)
     printTreePreOrder(node->left);
     printTreePreOrder(node->right);
 }
+
 
 /* In reverse of printTreeInOrder() */
 void printTreeReverseOrder(struct Tree *node)
@@ -272,24 +435,6 @@ void printTreeReverseOrder(struct Tree *node)
     printTreeReverseOrder(node->right);
     cout << node->data << " ";
     printTreeReverseOrder(node->left);
-}
-/* recursion routine to find path */
-void pathFinder(struct Tree *node, int path[], int level)
-{
-    if(node == NULL) return;
-    // save leaf node
-    if(node->left == NULL && node->right == NULL) {
-        path[level] = node->data;
-        for(int i = 0; i <= level; i++) {
-            cout << (char)path[i];
-        }
-        cout << endl;
-        return;
-    }
-    // save parent node
-    path[level] = node->data;
-    pathFinder(node->left, path, level+1);
-    pathFinder(node->right, path, level+1);
 }
 
 bool matchTree(Tree *r1, Tree *r2)
@@ -343,43 +488,6 @@ void mirror(Tree *r)
     r->left = tmp;
 }
 
-/* create a new tree from a sorted array */
-Tree *addToBST(char arr[], int start, int end)
-{
-    if(end < start) return NULL;
-    int mid = (start + end)/2;
-    
-    Tree *r = new Tree;
-    r->data = arr[mid];
-    r->left = addToBST(arr, start, mid-1);
-    r->right = addToBST(arr, mid+1, end);
-    return r;
-}
-
-Tree *createMinimalBST(char arr[], int size)
-{
-    return addToBST(arr,0,size-1);
-}
-
-/* Breadth first traversal using queue */
-void BreadthFirstTraversal(Tree *root)
-{
-    if (root == NULL) return;
-    deque <Tree *> queue;
-    queue.push_back(root);
-    
-    while (!queue.empty()) {
-        Tree *p = queue.front();
-        cout << p->data << " ";
-        queue.pop_front();
-        
-        if (p->left != NULL)
-            queue.push_back(p->left);
-        if (p->right != NULL)
-            queue.push_back(p->right);
-    }
-    cout << endl;
-}
 
 /* get the level of a node element: root level = 0 */
 int getLevel(struct Tree *node, int elm, int level)
@@ -391,99 +499,4 @@ int getLevel(struct Tree *node, int elm, int level)
         return getLevel(node->left, elm, level+1);
     else
         return getLevel(node->right, elm, level+1);
-}
-
-/* This code prints out all nodes at the same depth (level) */
-void BreadthFirst_LevelElement_Print
-(struct Tree *root, vector<vector<int> > &v)
-{
-    if(root == NULL) return;
-    deque<Tree *> q;
-    q.push_back(root);
-    while(!q.empty()) {
-        Tree *p =  q.front();
-        int lev = getLevel(root, p->data, 0);
-        v[lev].push_back(p->data);
-        q.pop_front();
-        if(p->left) q.push_back(p->left);
-        if(p->right)q.push_back(p->right);
-    }
-    return;
-}
-
-/* levelPrint()
- prints nodes at the same level
- This is simpler than the BreadthFirstTraversal(root) above
- It takes 2D vector with the same size of level (= MaxDepth+1)
- and fills elements as we traverse (preOrder) */
-
-void levelPrint(struct Tree *node, vector<vector<char> >&elm, int level)
-{
-    if(node == NULL) return;
-    // leaf nodes
-    if(node->left == NULL && node->right == NULL) {
-        elm[level].push_back(node->data);
-        return;
-    }
-    // other nodes
-    elm[level++].push_back(node->data);
-    levelPrint(node->left, elm, level);
-    levelPrint(node->right, elm, level);
-}
-
-/* find n-th max node from a tree */
-void NthMax(struct Tree* t)
-{
-    static int n_th_max = 5;
-    static int num = 0;
-    if(t == NULL) return;
-    NthMax(t->right);
-    num++;
-    if(num == n_th_max)
-        cout << n_th_max << "-th maximum data is "
-        << t->data << endl;
-    NthMax(t->left);
-}
-
-/* Converting a BST into an Array */
-void TreeToArray(struct Tree *node, int a[]){
-    static int pos = 0;
-    
-    if(node){
-        TreeToArray(node->left,a);
-        a[pos++] = node->data;
-        TreeToArray(node->right,a);
-    }
-}
-
-/* Separate even/odd level elements */
-/* This function is using BFS */
-void level_even_odd(struct Tree *node)
-{
-    vector<char> evenVec, oddVec;
-    if (node == NULL) return;
-    deque<struct Tree*> que;
-    que.push_back(node);
-    
-    while(!que.empty())
-    {
-        struct Tree *p = que.front();
-        int level = getLevel(node, p->data, 0) ;
-        // even level
-        if (level % 2 == 0)
-            evenVec.push_back(p->data);
-        else
-            oddVec.push_back(p->data);
-        que.pop_front();
-        if(p->left)  que.push_back(p->left);
-        if(p->right) que.push_back(p->right);
-    }
-    
-    cout << "even level elements : ";
-    for(int i = 0; i < evenVec.size(); i++)
-        cout << evenVec[i] << " ";
-    cout << endl << "odd level elements : ";
-    for(int i = 0; i < oddVec.size(); i++)
-        cout << oddVec[i] << " ";
-    cout << endl;
 }
